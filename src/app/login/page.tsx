@@ -1,6 +1,6 @@
 "use client";
 
-import { Button, Checkbox, Form, Input } from "antd";
+import { Button, Form, Input } from "antd";
 
 export default function Login() {
   const onFinish = (values: any) => {
@@ -15,7 +15,7 @@ export default function Login() {
       <div className="flex flex-col justify-center items-center">
         <div className=" flex justify-between shadow-md rounded-xl w-full max-w-[900px] ">
           <div className="w-full p-4 bg-white rounded-l-lg">
-            <p className="text-center mx-auto text-4xl font-bold drop-shadow-sm my-2">
+            <p className="text-center text-slate-700 mx-auto text-4xl font-bold drop-shadow-sm mt-8">
               Login to Your Account
             </p>
 
@@ -69,6 +69,7 @@ export default function Login() {
                     size="large"
                     shape="round"
                     block={true}
+                    style={{ height: "5vh", width: "50%" }}
                   >
                     Login
                   </Button>
