@@ -47,7 +47,7 @@ export async function POST(request: NextRequest) {
       password: hashpassword,
     });
 
-    newUser.save();
+    await newUser.save();
 
     return NextResponse.json(
       {

@@ -3,11 +3,30 @@ import Link from "next/link";
 import React from "react";
 import { useRouter } from "next/navigation";
 import axios from "axios";
-import { Button, Form, Input } from "antd";
+import { Button, Form, Input, message } from "antd";
 
 export default function Register() {
+  const router = useRouter();
+
+  // on finish logic
   const onFinish = (values: any) => {
     console.log("Success:", values);
+
+    axios
+      .post("/api/users/register", {
+        username: values.username,
+        email: values.email,
+        password: values.password,
+      })
+      .then((response) => {
+        console.log(response.data);
+        message.success("Registration succesful");
+        router.push("/login");
+      })
+      .catch((error) => {
+        console.log(error.response);
+        message.error("Registration failed " + error.response.data.message);
+      });
   };
   const onFinishFailed = (errorInfo: any) => {
     console.log("Failed:", errorInfo);
@@ -35,7 +54,7 @@ export default function Register() {
                 rules={[
                   {
                     required: true,
-                    message: "Please input your username!",
+                    message: "Please input your email!",
                   },
                 ]}
               >
