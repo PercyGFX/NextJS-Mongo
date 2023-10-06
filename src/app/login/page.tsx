@@ -1,6 +1,7 @@
 "use client";
 
 import { Button, Form, Input } from "antd";
+import Link from "next/link";
 
 export default function Login() {
   const onFinish = (values: any) => {
@@ -69,7 +70,7 @@ export default function Login() {
                     size="large"
                     shape="round"
                     block={true}
-                    style={{ height: "5vh", width: "50%" }}
+                    // style={{ height: "5vh", width: "50%" }}
                   >
                     Login
                   </Button>
@@ -86,10 +87,11 @@ export default function Login() {
             <p className=" text-center font-poppins text-white drop-shadow-sm my-2">
               Sign up and discover a great amount of new opportunities!
             </p>
-
-            <span className="bg-white rounded-full px-3 py-2 text-center drop-shadow-md my-2 hover:bg-slate-100 cursor-pointer">
-              Sign Up
-            </span>
+            <Link href="/register">
+              <p className="bg-white rounded-full px-3 py-2 text-center drop-shadow-md my-2 hover:bg-slate-100 cursor-pointer">
+                Sign Up
+              </p>
+            </Link>
           </div>
         </div>
       </div>

@@ -88,7 +88,7 @@ export default function Register() {
                     size="large"
                     shape="round"
                     block={true}
-                    style={{ height: "5vh", width: "50%" }}
+                    // style={{ height: "5vh", width: "50%" }}
                   >
                     Register
                   </Button>
@@ -105,10 +105,11 @@ export default function Register() {
             <p className=" text-center font-poppins text-white drop-shadow-sm my-2">
               Sign in from here!
             </p>
-
-            <span className="bg-white rounded-full px-3 py-2 text-center drop-shadow-md my-2 hover:bg-slate-100 cursor-pointer">
-              Sign In
-            </span>
+            <Link href="/login">
+              <p className="bg-white rounded-full px-3 py-2 text-center drop-shadow-md my-2 hover:bg-slate-100 cursor-pointer">
+                Sign In
+              </p>
+            </Link>
           </div>
         </div>
       </div>
